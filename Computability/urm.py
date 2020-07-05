@@ -45,7 +45,7 @@ class Data:
 
 
 class Instruction:
-    def __init__(self, args):
+    def __init__(self, *args):
         """creates URM-instruction
 
         Raises:
@@ -65,9 +65,20 @@ class Instruction:
             self._irator = args[0]
             self._irand1 = args[1]
             self._irand2 = args[2]
-            self._irand3 = args[23]
+            self._irand3 = args[3]
         else:
             raise ValueError("invalid instruction")
+
+    def __str__(self):
+        INAMES = ['Z', 'S', 'T', 'J']
+        repr = INAMES[self._irator] + "(" + str(self._irand1)
+        if self._irator >= 2:
+            repr += (", " + str(self._irand2))
+        if self._irator == 3:
+            repr += (", " + str(self._irand3))
+        repr += ")"
+        return repr 
+
 
     def do(self, data):
         """executes the instruction 'self'
@@ -126,4 +137,61 @@ def run(program, data, check=True):
             ic += 1
         else:
             ic = inext
-    return data[0]
+    return data.read(0)
+
+
+def translate_instruction(line):
+    """checks string 'line' is URM-instruction and translates it"""
+    if not isinstance(line, str):
+        raise ValueError("invalid instruction line")
+    head, sep, tail = line.partition(":")
+    if sep:
+        line = tail
+    line = line.strip()
+    head, sep, tail = line.partition("(")
+    if not sep:
+        raise ValueError("invalid instruction line")
+    icode = head.strip()
+    line, sep, tail = tail.partition(")")
+    if not sep:
+        raise ValueError("invalid instruction line")
+    words = line.split(",")
+    try:
+        args = list(map(int, words))
+    except:
+        raise ValueError("invalid instruction line")
+    if icode == 'Z' and len(args) == 1:
+        return Instruction(0, *args)
+    elif icode == 'S' and len(args) == 1:
+        return Instruction(1, *args)
+    elif icode == 'T' and len(args) == 2:
+        return Instruction(2, *args)
+    elif icode == 'J' and len(args) == 3:
+        return Instruction(3, *args)
+    else:
+        raise ValueError("invalid instruction line")
+
+def compile(source):
+    """
+    """
+    if isinstance(source, list):
+        return [translate_instruction(line) for line in source]
+    elif isinstance(source, str):
+        try:
+            file = open(source, 'r')
+            program = []
+            for line in file:
+                program.append(translate_instruction(line))
+        except IOError:
+            raise Exception("file error")
+        except: 
+            raise ValueError("source problem")
+        finally:
+            try:
+                file.close()
+            except:
+                pass
+        return program
+    else:
+        raise ValueError("invalid source")
+
