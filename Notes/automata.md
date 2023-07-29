@@ -1,10 +1,88 @@
-# Mealy and Moore Automata
+# Computation is an interaction of Mealy and Moore Automata
+
+Here, the general imperative model of computation is given.
+This model was proposed by V. Glushkov in 1964.
+We demonstrate that the unlimited register machine is a particular case of this general concept.
+
+## State Machines
 
 >**Definition** (of a state machine).
->A ***state machine*** is a triple $(Q,\Sigma,T)$ where
+>A ***state machine*** is a triple $(Q,\Sigma,\mathtt{do})$ where
 >- $Q$ is a set whose elements are called ***states***;
 >- $\Sigma$ is a finite alphabet called the ***input alphabet***;
->- $T:Q\times\Sigma\to Q$ called the ***transition function***.
+>- $\mathtt{do}:Q\to Q^\Sigma$ called the ***transition function***.
+
+The presented definition specifies only the structure of a state machine but does not say anything about its behaviour.
+To define the behaviour of a state machine, the following function $\mathtt{run}: Q\to Q^{\Sigma^\ast}$ is needed where
+
+$$\begin{array}{ll}
+\mathtt{run}\ q=\lambda\ x\mathop{.}&\mathtt{match}\ x\ \mathtt{with} \\
+&\mid[\ ]\Rightarrow\ q \\
+&\mid a :: x'\Rightarrow\ \mathtt{run}\ (\mathtt{do}\ q\ a)\ x' \\
+&\mathtt{end}\end{array}\quad\quad\quad\texttt{for any $q\in Q$.}$$
+
+### Python realization
+
+```
+class StateMachine:
+    """
+    Attributes:
+    -----------
+        _Q      the state set
+        _Sigma  the input alphabet
+
+    Methods:
+    --------
+        do      the transition function
+        run     the reaction function
+    """
+
+    def __init__(self, Q, Sigma, do):
+        """StateMachine constructor"""
+        args_checkingflag = (
+            isinstance(Q, set) and
+            isinstance(Sigma, set) and
+            callable(do))                # is True if arguments are correct
+        if not args_checkingflag:
+            raise ValueError("invalid argument(s) of state machine constructor")
+        self._Q = Q
+        self._Sigma = Sigma
+        self._do = do
+
+    def do(self, q, a):
+        """returns the result of applying the transition function"""
+        if q in self._Q and a in self._Sigma:
+            try:
+                return self._do(q, a)
+            except:
+                raise ValueError("check definition of 'do'")
+        raise ValueError("invalid 'do'-argument(s)")
+
+    def run(self, q, aa):
+        """returns the result of applying the reaction function"""
+        args_checkingflag = (
+            isinstance(aa, list) and
+            all(map(lambda x: x in self._Sigma, aa)))
+        if not args_checkingflag:
+            raise ValueError("invalid argument of 'run'")
+        if aa:
+            a, aaa = aa[0], aa[1 :]
+            return self.run(self.do(q, a), aaa)
+        else:
+            return q
+```
+
+The function $\mathtt{run}$ determines the states changing of a state machine as the response to a sequence of input impacts.
+
+Such an approach can be characterized as a sequential approach due to the following properties of the function $\mathtt{run}$.
+
+>**Proposition**.
+>Let $(Q,\Sigma,\mathtt{do})$ be a state machine then
+>1. $\mathtt{run}\ q\ [\ ]=q$ for any $q\in Q$;
+>2. $\mathtt{run}\ q\ [a]=\mathtt{do}\ q\ a$ for any $q\in Q$ and $a\in\Sigma$;
+>3. $\mathtt{run}\ q\ (x + y)=\mathtt{run}\ (\mathtt{run}\ q\ x)\ y$ for any $q\in Q$ and $x,y\in\Sigma^\ast$.
+
+## Mealy Automata
 
 >**Definition** (of a Mealy automaton).
 >A ***Mealy automaton*** is a quintuple $(Q,\Sigma,\Lambda,T,G)$ where
