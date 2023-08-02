@@ -1,4 +1,4 @@
-# Computation is an interaction of Mealy and Moore Automata
+<H1>Computation is an interaction of Mealy and Moore Automata</H1>
 
 Here, the general imperative model of computation is given.
 This model was proposed by V. Glushkov in 1964.
