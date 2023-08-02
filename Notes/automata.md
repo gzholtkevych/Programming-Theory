@@ -6,6 +6,10 @@ We demonstrate that the unlimited register machine is a particular case of this 
 
 ## State Machines
 
+A state machine is a principal concept for our further consideration.
+
+### Definitions
+
 >**Definition** (of a state machine).
 >A ***state machine*** is a triple $(Q,\Sigma,\mathtt{do})$ where
 >- $Q$ is a set whose elements are called ***states***;
@@ -16,10 +20,12 @@ The presented definition specifies only the structure of a state machine but doe
 To define the behaviour of a state machine, the following function $\mathtt{run}: Q\to Q^{\Sigma^\ast}$ is needed where
 
 $$\begin{array}{ll}
-\mathtt{run}\ q=\lambda\ x\mathop{.}&\mathtt{match}\ x\ \mathtt{with} \\
+\mathtt{run}\ q=\lambda\ x:\Sigma^\ast\mathop{.}&\mathtt{match}\ x\ \mathtt{with} \\
 &\mid[\ ]\Rightarrow\ q \\
-&\mid a :: x'\Rightarrow\ \mathtt{run}\ (\mathtt{do}\ q\ a)\ x' \\
+&\mid a :: \mathtt{tail}\Rightarrow\ \mathtt{run}\ (\mathtt{do}\ q\ a)\ \mathtt{tail} \\
 &\mathtt{end}\end{array}\quad\quad\quad\texttt{for any $q\in Q$.}$$
+
+Sometimes, this function is called the ***reaction function*** of the state machine.
 
 ### Python realization
 
