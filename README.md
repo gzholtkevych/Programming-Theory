@@ -18,6 +18,14 @@
   <li>the existence of universal programs and their practical significance;</li>
   <li>Rice and Rice-Shapiro Theorems; Kleene fixed-point and normal form Theorems.</li>
   </ul>
+  In contrast, the second part is devoted to functional programming.
+  Students get acquainted with the typeless lambda calculus and the corresponding computational model.
+  In addition, the method of modeling imperative programming using typeless lambda calculus is explained. This demonstrates the computational equivalence of imperative and functional paradigms in programming.<br/>
+  Functional anomalies of the computational process are demonstrated. Thus, the problem of overcoming these anomalies arises.
+  To solve this problem, the typing of lambda terms is proposed. The appropriate technique is demonstrated in the example of the simple typed lambda calculus.
+  Also, the correspondence between enriched simple lambda calculus and constructive propositional logic (the Curry-Howard Correspondence) is discussed.
+  The roadmap for enriching the typing of lambda terms is presented using Berendreght's Lambda Cube.<br/>
+  At the end of the course, students meet The Coq Proof Assistant - the powerful software toolkit for verification software solutions.
   </td></tr>
 </table>
  
