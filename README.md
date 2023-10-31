@@ -32,13 +32,18 @@
 <table>
 <tr><th>No</th><th>Topic</th><th>Instructions</th></tr>
 <tr><td>G00</td><td>Introduction. The concept of a programming paradigm</td><td></td></tr>  
-<tr><td>F01</td><td>Primitive recursive and recursive functions. Decidable and undecidable problems</td><td></td></tr>
-<tr><td>F02</td><td>Unlimited Register Machine</td><td></td></tr>
-<tr><td>F03</td><td>Any recursive function is computed with URM-program</td><td></td></tr>
-<tr><td>F04</td><td>Gödel numbering of URM-programs. The existing of a non-recursive function</td><td></td></tr>
-<tr><td>F05</td><td>Universal URM-programs and smn-Theorem</td><td></td></tr>
-<tr><td>F06</td><td>Program properties. Their decidability, semidecidability and undecidability</td><td></td></tr>
-<tr><td>F07</td><td>Rice and Rice-Shapiro Theorems</td><td></td></tr>
-<tr><td>F09</td><td>Kleene Fixed-Point and Normal Form Theorem</td><td></td></tr>
+<tr><td>I01</td><td>Primitive recursive and recursive functions. Decidable and undecidable problems</td><td></td></tr>
+<tr><td>I02</td><td>Unlimited Register Machine</td><td></td></tr>
+<tr><td>I03</td><td>Any recursive function is computed with URM-program</td><td></td></tr>
+<tr><td>I04</td><td>Gödel numbering of URM-programs. The existing of a non-recursive function</td><td></td></tr>
+<tr><td>I05</td><td>Universal URM-programs and smn-Theorem</td><td></td></tr>
+<tr><td>I06</td><td>Program properties. Their decidability, semidecidability and undecidability</td><td></td></tr>
+<tr><td>I07</td><td>Rice and Rice-Shapiro Theorems</td><td></td></tr>
+<tr><td>I08</td><td>Kleene fixed-point and normal form Theorem</td><td></td></tr>
+<tr><td>F01</td><td>The notion of a function</td><td></td></tr>
+<tr><td>F02</td><td>Typeless lambda calculus: Syntax</td><td></td></tr>
+<tr><td>F03</td><td>Typeless lambda calculus: Equalities</td><td></td></tr>
+<tr><td>F04</td><td>Computing </td><td></td></tr>
+
 </table>
  
