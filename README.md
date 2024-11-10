@@ -1,39 +1,25 @@
-<H1><b>Course Syllabus</b></H1>
-<H2>The General Course Description</H2>
+<H1><b>ПЛАН КУРСУ</b></H1>
 <table>
-  <tr><td><b>Course Title:</b></td><td><b>Programming Theory</b></td></tr>
-  <tr><td><b>Lecturer:</b></td><td>Prof. Grygoriy Zholtkevych, DSc;
-  email: <a href="mailto:g.zholtkevych@karazin.ua">g.zholtkevych@karazin.ua</a><br/>
-  Dean of the Mathematics and Computer Science School, V.N. Karazin Kharkiv National University;<br/>
-  Professor of the Theoretical and Applied Computer Science Department</td></tr>
-  <tr><td><b>Brief Course Description:</b></td><td>
-  The course is structured in two parts corresponding to imperative and functional programming paradigms.
-  Therefore, the introductory lecture is devoted to the programming paradigm concept.<br/>
-  In the first part of the course, computability and related concepts are studied.
-  The presentation of this part is based on the concept of a recursive function and the Unlimited Register Machine (URM) model.
-  The former is used to explain the concept of denotational semantics, while the latter is used to demonstrate the notion of operational semantics.
-  On this basis, the following is demonstrated:
-  <ul>
-  <li>the relationship between the operational and denotational approaches to modeling semantics;</li>
-  <li>the existence of universal programs and their practical significance;</li>
-  <li>Rice and Rice-Shapiro Theorems; Kleene fixed-point and normal form Theorems.</li>
-  </ul>
-  In contrast, the second part is devoted to functional programming.
-  Students get acquainted with the typeless lambda calculus and the corresponding computational model.
-  In addition, the method of modeling imperative programming using typeless lambda calculus is explained. This demonstrates the computational equivalence of imperative and functional paradigms in programming.<br/>
-  Functional anomalies of the computational process are demonstrated. Thus, the problem of overcoming these anomalies arises.
-  To solve this problem, the typing of lambda terms is proposed. The appropriate technique is demonstrated in the example of the simple typed lambda calculus.
-  Also, the correspondence between enriched simple lambda calculus and constructive propositional logic (the Curry-Howard Correspondence) is discussed.
-  The roadmap for enriching the typing of lambda terms is presented using Berendreght's Lambda Cube.<br/>
-  At the end of the course, students meet The Coq Proof Assistant - the powerful software toolkit for verification software solutions.
+<tr><td><b>Назва курсу:</b></td><td><b>Теорія програмування</b></td></tr>
+<tr><td><b>Викладач:</b></td><td>Проф. Григорій ЖОЛТКЕВИЧ, д.т.н.;<br/>email: <a href="mailto:g.zholtkevych@karazin.ua">g.zholtkevych@karazin.ua</a><br/>
+декан факультету математики і інформатики Харківського національного університету імені В.Н. Каразіна;<br/>
+професор кафедри теоретичної та прикладної інформатики</td></tr>
+<tr><td><b>Короткий опис курсу:</b></td><td>Курс складається з двох частин, що відповідають парадигмам імперативного та функціонального програмування.
+Тому вступна лекція присвячена поняттю парадигми програмування.
+У першій частині курсу вивчаються обчислюваність і пов’язані з нею концепції.
+Презентація цієї частини базується на<ul><li>концепції рекурсивної функції та</li><li>моделі Unlimited Register Machine (URM).</li></ul>
+Перше використовується для пояснення поняття денотаційної семантики, тоді як друге використовується для демонстрації поняття операційної семантики.
+На цій основі показано:
+<ul><li>зв'язок між операційним і денотаційним підходами до моделювання семантики;</li>
+<li>існування універсальних програм та їх практичне значення;</li><li>теореми Райса та Райса-Шапіро; теореми Кліні про фіксовану точку та нормальну форму.</li></ul>Натомість друга частина присвячена функціональному програмуванню. Студенти знайомляться з безтиповим лямбда-численням і відповідною обчислювальною моделлю. Крім того, пояснюється метод симулювання імперативних програм за допомогою безтипового лямбда-числення. Це демонструє обчислювальну еквівалентність імперативної та функціональної парадигм у програмуванні.<br/>Продемонстровано функціональні аномалії обчислювального процесу. Таким чином, постає проблема подолання цих аномалій. Для вирішення цієї проблеми пропонується типізація лямбда-термів. Відповідна методика продемонстрована на прикладі простого типізованого лямбда-числення. Також обговорюється відповідність між збагаченим простим лямбда-численням і конструктивною пропозиційною логікою (відповідність Каррі-Говарда). Дорожню карту для збагачення введення лямбда-термінів представлено з використанням лямбда-куба Берендрегта.<br/>Наприкінці курсу студенти знайомляться з Coq Proof Assistant – потужним програмним інструментарієм для програмних рішень перевірки.
   </td></tr>
 </table>
-<H2>The Course Scedule</H2> 
+<H2>Зміст курсу</H2> 
 <table>
-<tr><th>No</th><th>Topic</th><th>Instructions</th></tr>
-<tr><td>G00</td><td>Introduction. The concept of a programming paradigm</td><td></td></tr>  
-<tr><td>I01</td><td>Primitive recursive and recursive functions. Decidable and undecidable problems</td><td></td></tr>
-<tr><td>I02</td><td>Unlimited Register Machine</td><td></td></tr>
+<tr><th>№</th><th>Тема</th><th>Примітки</th></tr>
+<tr><td>G00</td><td>Вступ. Концепція парадигми програмування</td><td></td></tr>  
+<tr><td>I01</td><td>Примітивно рекурсивні та рекурсивні функції. Розв'язні та нерозв'язні проблнми</td><td></td></tr>
+<tr><td>I02</td><td>Модель Unlimited Register Machine</td><td></td></tr>
 <tr><td>I03</td><td>Any recursive function is computed with URM-program</td><td></td></tr>
 <tr><td>I04</td><td>Gödel numbering of URM-programs. The existing of a non-recursive function</td><td></td></tr>
 <tr><td>I05</td><td>Universal URM-programs and smn-Theorem</td><td></td></tr>
