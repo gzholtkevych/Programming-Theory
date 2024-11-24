@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "7410e42676c40876",
+        "id": "20a85756e98c8983",
         "type": "tabs",
         "children": [
           {
-            "id": "5619896c0237e0ff",
+            "id": "ef5e24360ee880d6",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "README.md",
-                "mode": "preview",
-                "source": true
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "README"
+              "title": "Нова вкладка"
             }
           }
         ]
@@ -162,8 +158,9 @@
       "command-palette:Відкрити меню команд": false
     }
   },
-  "active": "5619896c0237e0ff",
+  "active": "ef5e24360ee880d6",
   "lastOpenFiles": [
+    "README.md",
     "_Templates"
   ]
 }
