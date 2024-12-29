@@ -6,7 +6,6 @@
       {
         "id": "0d2a6fcfbb34c7cd",
         "type": "tabs",
-        "dimension": 57.55076142131979,
         "children": [
           {
             "id": "d698c4f67f4e3b8f",
@@ -15,28 +14,11 @@
               "type": "markdown",
               "state": {
                 "file": "Understanding what a program is.md",
-                "mode": "preview",
+                "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
               "title": "Understanding what a program is"
-            }
-          }
-        ]
-      },
-      {
-        "id": "2874fa8a25e5dce3",
-        "type": "tabs",
-        "dimension": 42.44923857868021,
-        "children": [
-          {
-            "id": "aab758b2fa151802",
-            "type": "leaf",
-            "state": {
-              "type": "graph",
-              "state": {},
-              "icon": "lucide-git-fork",
-              "title": "Граф"
             }
           }
         ]
@@ -183,9 +165,9 @@
   },
   "active": "d698c4f67f4e3b8f",
   "lastOpenFiles": [
+    "Understanding what a program is.md",
     "Algorithm.md",
     "Data structure.md",
-    "Understanding what a program is.md",
     "_Templates/card.template.md",
     "_Templates/preamble.sty",
     "Без назви"
