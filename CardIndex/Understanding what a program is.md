@@ -16,21 +16,33 @@ Structure Program :=
 ; algorithm : datatype -> option datatype
 }.
 ```
-Вона формалізує представляє структуру даних компонентом `datatype`, а алгоритм - компонентом `algorithm`, який визначає правило, що ідентифікує умову припинення обчислення або спосіб перетворення даних (більш детально дивись [визначення контейнерного типу `option`](https://coq.inria.fr/doc/V8.20.0/stdlib/Coq.Init.Datatypes.html)).
+Модель формально представляє структуру даних компонентом `datatype`, а алгоритм - компонентом `algorithm`, який визначає як умову припинення обчислення так і спосіб перетворення даних.
+>[!remark]- Remark
+Контейнерний тип `option` визначений [тут](https://coq.inria.fr/doc/V8.20.0/stdlib/Coq.Init.Datatypes.html).
 
 Визначення семантики програми базується на відношенні *досяжності* одного стану даних з іншого за допомогою програми. Формально це відношення можна визначити так.
 ```coq
-Inductive pass (p : Program) : datatype p -> datatype p -> Prop :=
-| refl : forall x : datatype p, pass p x x
-| cont : forall x x' y : datatype p,
-	pass p x x' -> algorithm p x' = Some y -> pass p x y.
+Inductive reach (p : Program) : datatype p -> datatype p -> Prop :=
+| reach_refl : forall x : datatype p, reach p x x
+| reach_step : forall x y : datatype p, algorithm p x = Some y -> reach p x y
+| reach_trans : forall x y z : datatype p,
+    reach p x y -> reach p y z -> reach p x z.
 
-Notation "p : x ==> y" := (pass p x y) (at level 70).
+Notation "p [ x ==> y ] " := (reach p x y) (at level 70).
 ```
-Тепер визначити зміст фрази "`y` *є результатом обчислення програми* `p` *для входу* `x`" можна так 
+Зміст фрази "`y` *є результатом обчислення програми* `p` *для входу* `x`" визначається так 
 ```coq
 Definition compute (p : Program) : datatype p -> datatype p -> Prop :=
-  fun x y => forall x y, p : x ==> y /\ algorithm p y = None.
+  fun x y => forall x y, p[x ==> y] /\ algorithm p y = None.
 
-Notation "p : x ==>! y" := (compute p x y) (at level 70).
+Notation "p[x ==>! y]" := (compute p x y) (at level 70).
+```
+Якщо тепер `p` є програмою, а `R` є предикатом, що пов'язує вхідні та вихідні дані `p`, тоді твердження "`p` задовольняє вимогам `R`" треба розуміти як `p |= R` за наступного визначення
+```coq
+Definition satisfy
+  (p : Program)
+  (R : datatype p -> datatype p -> Prop) : Prop :=
+	forall x y : datatype p, p[x ==>! y] -> R x y.
+
+Notation "p |= R" := (satisfy p R) (at level 70).
 ```
