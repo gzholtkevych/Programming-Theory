@@ -9,28 +9,5 @@
 - структура даних визначає множину можливих станів даних, а
 - алгоритм - правила перетворення цих даних.
 
-Синтаксично програми можна моделювати в термінах [The Coq Proof Assistant](https://coq.inria.fr/) у такий спосіб
-```coq
-Structure Program :=
-{ datatype : Set
-; algorithm : datatype -> option datatype
-}.
-```
-Вона формалізує представляє структуру даних компонентом `datatype`, а алгоритм - компонентом `algorithm`, який визначає правило, що ідентифікує умову припинення обчислення або спосіб перетворення даних (більш детально дивись [визначення контейнерного типу `option`](https://coq.inria.fr/doc/V8.20.0/stdlib/Coq.Init.Datatypes.html)).
+Інакше кажучи, програму можна розглядати як пару $(X,f)$, що складається з множини $X$ станів даних, яка визначається структурою даних програми, та функції $f:X\to1+X$ (тут $1=\{\Uparrow\}$), яка визначає множину $\{x\in X\mid fx=\Uparrow\}$ тих станів даних, при досягнені яких програма завершується, та правило перетворення даних для тих $x\in X$, що задовольняють умові $fx\neq\,\Uparrow$.
 
-Визначення семантики програми базується на відношенні *досяжності* одного стану даних з іншого за допомогою програми. Формально це відношення можна визначити так.
-```coq
-Inductive pass (p : Program) : datatype p -> datatype p -> Prop :=
-| refl : forall x : datatype p, pass p x x
-| cont : forall x x' y : datatype p,
-	pass p x x' -> algorithm p x' = Some y -> pass p x y.
-
-Notation "p : x ==> y" := (pass p x y) (at level 70).
-```
-Тепер визначити зміст фрази "`y` *є результатом обчислення програми* `p` *для входу* `x`" можна так 
-```coq
-Definition compute (p : Program) : datatype p -> datatype p -> Prop :=
-  fun x y => forall x y, p : x ==> y /\ algorithm p y = None.
-
-Notation "p : x ==>! y" := (compute p x y) (at level 70).
-```
