@@ -27,12 +27,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Understanding what a program is.md",
+                "file": "Coq-model of a program.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "Understanding what a program is"
+              "title": "Coq-model of a program"
             }
           }
         ],
@@ -180,9 +180,9 @@
   },
   "active": "439322f9d5a4150e",
   "lastOpenFiles": [
+    "Understanding what a program is.md",
     "Data structure.md",
     "Algorithm.md",
-    "Understanding what a program is.md",
     "Coq-model of a program.md",
     "_Templates/card.template.md",
     "_Templates/preamble.sty",
