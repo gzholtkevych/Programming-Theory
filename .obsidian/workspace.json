@@ -1,24 +1,20 @@
 {
   "main": {
-    "id": "9f51fc72ee039293",
+    "id": "19ac02d9829b6ced",
     "type": "split",
     "children": [
       {
-        "id": "0d2a6fcfbb34c7cd",
+        "id": "c7f3fa2462af2fae",
         "type": "tabs",
         "children": [
           {
-            "id": "d698c4f67f4e3b8f",
+            "id": "7227a425efec714a",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Understanding what a program is.md",
-                "mode": "preview",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "Understanding what a program is"
+              "title": "Нова вкладка"
             }
           }
         ]
@@ -27,27 +23,28 @@
     "direction": "vertical"
   },
   "left": {
-    "id": "6450c538386032bc",
+    "id": "db31b435ea72f702",
     "type": "split",
     "children": [
       {
-        "id": "f1a4875657f9c427",
+        "id": "3a5de6c160ca1eaa",
         "type": "tabs",
         "children": [
           {
-            "id": "b8ca654224e4981c",
+            "id": "084321449d842ad4",
             "type": "leaf",
             "state": {
               "type": "file-explorer",
               "state": {
-                "sortOrder": "alphabetical"
+                "sortOrder": "alphabetical",
+                "autoReveal": false
               },
               "icon": "lucide-folder-closed",
               "title": "Файловий менеджер"
             }
           },
           {
-            "id": "20bff5f483517c8a",
+            "id": "5e1c0a300114b50c",
             "type": "leaf",
             "state": {
               "type": "search",
@@ -64,7 +61,7 @@
             }
           },
           {
-            "id": "70002726684c601f",
+            "id": "92a43a225ab575d0",
             "type": "leaf",
             "state": {
               "type": "bookmarks",
@@ -80,40 +77,40 @@
     "width": 300
   },
   "right": {
-    "id": "31402b4fbfddda13",
+    "id": "9e660ffb5d9660b1",
     "type": "split",
     "children": [
       {
-        "id": "9208e37276412352",
+        "id": "0ee59047be8af176",
         "type": "tabs",
         "children": [
           {
-            "id": "4fc102259e4111d8",
+            "id": "29d097a2ed53a583",
             "type": "leaf",
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Understanding what a program is.md",
+                "file": "CardIndex/Understanding what a program is.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
                 "showSearch": false,
                 "searchQuery": "",
                 "backlinkCollapsed": false,
-                "unlinkedCollapsed": false
+                "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
               "title": "Зворотні посилання для Understanding what a program is"
             }
           },
           {
-            "id": "a8e4b5f42d7c820e",
+            "id": "502a5aec43767607",
             "type": "leaf",
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Understanding what a program is.md",
-                "linksCollapsed": true,
+                "file": "CardIndex/Understanding what a program is.md",
+                "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
@@ -121,7 +118,7 @@
             }
           },
           {
-            "id": "48de6bd4b1a7e983",
+            "id": "e69cad3a1981d9c9",
             "type": "leaf",
             "state": {
               "type": "tag",
@@ -134,19 +131,18 @@
             }
           },
           {
-            "id": "2427df6a15f7de59",
+            "id": "82e9391eafd8fb05",
             "type": "leaf",
             "state": {
               "type": "outline",
               "state": {
-                "file": "Understanding what a program is.md"
+                "file": "CardIndex/Understanding what a program is.md"
               },
               "icon": "lucide-list",
               "title": "Вміст Understanding what a program is"
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "horizontal",
@@ -163,14 +159,14 @@
       "command-palette:Відкрити меню команд": false
     }
   },
-  "active": "d698c4f67f4e3b8f",
+  "active": "7227a425efec714a",
   "lastOpenFiles": [
-    "Data structure.md",
-    "Understanding what a program is.md",
-    "Algorithm.md",
-    "Coq-model of a program.md",
-    "_Templates/card.template.md",
-    "_Templates/preamble.sty",
-    "Без назви"
+    "CardIndex/Understanding what a program is.md",
+    "CardIndex/Coq-model of a program.md",
+    "Coq Scripts/#Definitions.v#",
+    "Coq-model of a data structure.md",
+    "CardIndex/Algorithm.md",
+    "CardIndex/Data structure.md",
+    "Lecture Notes/Topc00.md"
   ]
 }

@@ -7,9 +7,15 @@
 Structure Program :=
 { datatype : Set
 ; algorithm : datatype -> option datatype
+; eq_dec : aDecSet datatype
 }.
 ```
 Ця модель формально представляє *[[Data structure|структуру даних]]* компонентом `datatype`, а *[[Algorithm|алгоритм]]* - компонентом `algorithm`, який визначає правило, що ідентифікує умову припинення обчислення або спосіб перетворення даних (щодо контейнерного типу `option` дивись [тут](https://coq.inria.fr/doc/V8.20.0/stdlib/Coq.Init.Datatypes.html)).
+
+```coq
+Class aDecSet (X : Set) : Set :=
+  eq_dec : forall x y : X, {x = y} + {x <> y}.
+```
 
 Визначення семантики програми базується на відношенні *досяжності* одного стану даних з іншого за допомогою програми. Формально це відношення можна визначити так.
 ```coq
